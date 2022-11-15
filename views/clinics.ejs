@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <%- include('./sup/headr.ejs')%>
+<body>
+    <div class="page  d-felx">
+    
+        <%- include('./sup/dasebord.ejs')%>
+
+        
+        <div class="content">
+            <%- include('./sup/user_options.ejs') %> 
+
+
+
+            <div class="box_filter" >
+                
+                <div class="search_ar">
+                    <label for="CLINICS">CLINICS </label>
+                    <input type="search">
+                </div>
+                
+
+                
+                <div class="box_2">
+                    
+                       <label for="health practitioner">Specialization</label>
+                       <select name="Specialization">
+                        <optgroup label="Specialization">
+                            <% if(user.length!=0){
+                                var i=1;
+                                user.forEach(function(data){
+                                %> 
+                          <option id="Specialization" value="Specialization"><%=data.Specialization%></option>
+                          
+                          <%  i++; }) %>
+                         
+                        </optgroup>
+                        
+                      </select>
+                  
+                  
+
+                    
+    <% } else{ %>
+         <p></p>
+    <% } %>
+
+                    
+                </div>
+                
+                  
+                  <div class="box_3">
+                    <label for="health practitioner">Clinic</label>
+                       <select name="Clinic">
+                        <optgroup label="Clinic">
+                            <% if(user.length!=0){
+                                var i=1;
+                                user.forEach(function(data){
+                                %> 
+                          <option id="Clinic" value="Clinic"><%=data.Clinic%></option>
+                          
+                          <%  i++; }) %>
+                         
+                        </optgroup>
+                        
+                      </select>
+                  
+                  
+
+                    
+    <% } else{ %>
+         <p></p>
+    <% } %>
+                  </div>
+                  
+            </div>
+
+
+
+
+
+
+            
+
+
+
+            
+
+
+            <div class="btn_style">
+                <div style="width: 100%;" class="session_1">
+                    <h3>Clinic</h3>
+                <button class="btn_clinics_box_1" onclick="show_Add_clinics()">Add clinic</button>
+                </div>
+                
+                
+                </div>
+
+
+                <div class="box_add_clinic">
+
+                    <form class="row g-3 p-20">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Clinic Name</label>
+    <input type="text" class="form-control"  name="Clinic_name" >
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Specialization</label>
+    <input type="text" class="form-control" name="Specialization">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" class="form-control" >
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Address 2</label>
+    <input type="text" class="form-control">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select">
+      <option selected>Choose...</option>
+      <option>...</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+ 
+  <div class="col-12">
+    <div class="btn_style_01">
+                    <button style="color: white; background-color: rgba(30, 30, 139, 0.705);">Save</button>
+                    <button class="btn3" onclick="close__boc_add_clicics()">Close</button>
+                    </div>
+  </div>
+</form>
+ 
+
+
+
+
+  
+
+                   
+
+
+
+                    
+                    
+                      
+                        
+                 </div>
+
+            
+           
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

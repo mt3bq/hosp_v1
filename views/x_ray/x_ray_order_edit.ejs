@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <%- include('../sup/headr.ejs')%>
+<body>
+    <div class="page  d-felx">
+    
+        <%- include('../sup/x_ray_dashbord.ejs')%>
+
+        
+        <div class="content">
+
+            <%- include('../sup/user_options.ejs') %> 
+
+
+            <div class="up_box">
+                <form method="post" enctype="multipart/form-data">
+                <label for="up_diom">Dicom File</label>
+                <input type="file" name="file" id="">
+                <button>save</button>
+            </form>
+            </div>
+            
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

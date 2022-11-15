@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./sup/headr.ejs')%>
+
+<body>
+    <div class="page  d-felx">
+        <%- include('./sup/dasebord.ejs')%>
+        <div class="content">
+
+           <%- include('./sup/user_options.ejs') %> 
+           
+
+            <div class="box_filter">
+                
+                <div class="search_ar">
+                    <label for="health practitioner">Health Practitioner </label>
+                    <input type="search">
+                </div>
+                
+
+                
+                <div class="box_2">
+                    
+                       <label for="health practitioner">Specialization</label>
+                       <select name="Specialization">
+                        <optgroup label="Specialization">
+                            <% if(user.length!=0){
+                                var i=1;
+                                user.forEach(function(data){
+                                %> 
+                          <option id="Specialization" value="Specialization"><%=data.Specialization%></option>
+                          
+                          <%  i++; }) %>
+                         
+                        </optgroup>
+                        
+                      </select>
+                  
+                  
+
+                    
+    <% } else{ %>
+         <p></p>
+    <% } %>
+
+                    
+                </div>
+                
+                  
+                  <div class="box_3">
+                    <label for="health practitioner">Clinic</label>
+                       <select name="Clinic">
+                        <optgroup label="Clinic">
+                            <% if(user.length!=0){
+                                var i=1;
+                                user.forEach(function(data){
+                                %> 
+                          <option id="Clinic" value="Clinic"><%=data.Clinic%></option>
+                          
+                          <%  i++; }) %>
+                         
+                        </optgroup>
+                        
+                      </select>
+                  
+                  
+
+                    
+    <% } else{ %>
+         <p></p>
+    <% } %>
+                  </div>
+                  
+            </div>
+            <div class="btn_style">
+            <div class="session_1">
+                <h3>Health Practitioner</h3>
+            <button class="btn" onclick="show_reg()">Process Selction</button>
+            </div>
+            
+            <button class="btn2" onclick="show_reg_2()">Add health practitioner</button>
+            </div>
+
+            <div class="box_1">
+               <div class="titel_1">
+                <h1>Doctor Schedual</h1>
+               </div>
+
+                <div class="session_box">
+                    <div class="time_box">
+                        <div class="data_form">
+                            <p>Data form</p>
+                        <input type="date" name="data_start" id="">
+                        <p>to</p>
+                        <input type="date" name="data_end" id="">
+                        </div>
+                        <div class="time">
+                            <p>Sunday</p>
+                            <input type="time" name="data_start" id="">
+                            <p>to</p>
+                            <input type="time" name="data_end" id="">
+                            </div>
+                            
+                            <div class="time">
+                            <p>Monday</p>
+                            <input type="time" name="data_start" id="">
+                            <p>to</p>
+                            <input type="time" name="data_end" id="">
+                            </div>
+                            
+                            <div class="time">
+                            <p>Tuesday</p>
+                            <input type="time" name="data_start" id="">
+                            <p>to</p>
+                            <input type="time" name="data_end" id="">
+                            </div>
+                            
+                            <div class="time">
+                            <p>Wednesday</p>
+                            <input type="time" name="data_start" id="">
+                            <p>to</p>
+                            <input type="time" name="data_end" id="">
+                            </div>
+
+                            <div class="time">
+                                <p>Thursday</p>
+                                <input type="time" name="data_start" id="">
+                                <p>to</p>
+                            <input type="time" name="data_end" id="">
+                                </div>
+
+                                <div class="time">
+                                    <p>Friday</p>
+                                    <input type="time" name="data_start" id="">
+                                    <p>to</p>
+                                    <input type="time" name="data_end" id="">
+                            </div>
+
+                            <div class="time">
+                                <p>Saturday</p>
+                                <input type="time" name="data_start" id="">
+                                <p>to</p>
+                                <input type="time" name="data_end" id="">
+                        </div>
+
+                       
+                            
+                            
+                    </div>
+
+                    <div class="select_doc">
+
+                      
+                        <% if(user.length!=0){
+                            var i=1;
+                            user.forEach(function(data){
+                            %> 
+                        <label for="<%=data.first_name%>" class="cheek_box">
+                            <input type="checkbox" name="dr_name" id="<%=data.first_name%>">
+                            
+                            <p><%= `${data.first_name}  ${data.se_name}  ${data.list_name}`%></p>
+                            
+                        </label>
+                        <%  i++; }) %>
+
+                        
+        <% } else{ %>
+             <p></p>
+        <% } %>
+
+
+
+        
+            
+               
+                       
+                       
+                        
+                     
+    </div>
+    <div class="btn_style_01">
+            <button style="color: white; background-color: rgba(30, 30, 139, 0.705);" class="btn3" >Save</button>
+            <button class="btn3" onclick="close_form()">Close</button>
+            </div>
+               
+           </div>
+                    </div>
+               
+
+
+
+
+
+
+
+
+
+            <div class="reg_box_2">
+               <div class="titel_head">
+                <h1>Add Health Paractitioner
+                </h1>
+
+               </div>
+
+        
+<form class="row g-3 p-20" id="form_1">
+   
+    
+ 
+
+  
+
+
+
+
+<div class="row">
+  <div class="col">
+   
+    <div class="form-outline">
+        <label class="form-label">First name</label>
+      <input type="text"  class="form-control" name="first_name" />
+      
+    </div>
+  </div>
+  <div class="col">
+ 
+    <div class="form-outline">
+        <label class="form-label" >Second Name </label>
+        <input type="text"  class="form-control" name="se_name" />
+      
+    </div>
+  </div>
+  <div class="col">
+ 
+    <div class="form-outline">
+        <label class="form-label" >List Name</label>
+      <input type="text"  class="form-control" name="list_name" />
+      
+    </div>
+  </div>
+</div>
+
+<div class="row pt-20">
+  <div class="col">
+   
+    <div class="form-outline">
+        <label class="form-label"> Arabic First Name</label>
+      <input type="text"  class="form-control" name="Arabic_first_name" />
+      
+    </div>
+  </div>
+  <div class="col">
+   
+    <div class="form-outline">
+        <label class="form-label" >Arabic Second Name</label>
+      <input type="text" id="form8Example4" class="form-control" name="Arabic_se_name" />
+      
+    </div>
+  </div>
+  <div class="col">
+    <!-- Email input -->
+    <div class="form-outline">
+        <label class="form-label">Arabic List Name</label>
+      <input type="text"  class="form-control" name="Arabic_list_name"/>
+      
+    </div>
+  </div>
+</div>
+<div class="row pt-20">
+  <div class="col">
+   
+    <div class="form-outline">
+        <label class="form-label"> Specialization</label>
+      <input type="text"  class="form-control" name="Specialization" />
+      
+    </div>
+  </div>
+  <div class="col">
+   
+    <div class="form-outline">
+        <label class="form-label" >Clinic</label>
+      <input type="text" id="form8Example4" class="form-control" name="Clinic" />
+      
+    </div>
+  </div>
+  <div class="col">
+    <!-- Email input -->
+    <div class="form-outline">
+        <label class="form-label">Role</label>
+      <input type="text"  class="form-control" name="Role"/>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row mb-4 pt-20">
+    <div class="col">
+      <div class="form-outline">
+        <label class="form-label" for="form6Example1">Momares No.</label>
+        <input type="text" class="form-control" name="momares_number" />
+        
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <label class="form-label" for="form6Example2">Phone Number</label>
+        <input type="text"  class="form-control" name="phone_number" />
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="up_style">
+                            <div class="feild_3">
+                                <label for="">Stamp or Signature (Optional)</label>
+                                <input type="file" name="up_sgnil" id="">
+                            </div>
+
+                        </div>
+
+
+ 
+  
+ 
+
+<div class="btn_sty">
+<button style="color: white; background-color: rgba(30, 30, 139, 0.705);">Save</button>
+
+ </div>
+
+</form>
+<div class="cansel_btn">
+  <i   onclick="close_form_2()" class="fa-solid fa-xmark"></i>
+    </div>
+
+              
+               
+               
+
+               
+            </div>
+            
+
+
+           
+
+
+
+
+
+
+            <div class="table_style">
+                <table>
+                    <tr style="background-color: #eceff1; height:50px; border:none">
+                     
+                     <th>Full Name</th>
+                      <th>Specialization</th>
+                      <th>Clinic</th>
+                      <th>Momar's NO </th>
+                    
+                    </tr>
+                    <%
+                    if(user.length!=0){
+                    var i=1;
+                    user.forEach(function(data){
+                    %>
+                    <tr style="display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #fff;
+    height: 63px;
+    justify-content: space-around;
+    font-size: 15px;">
+                      <td><%=`${data.first_name} ${data.se_name} ${data.list_name}`%></td>
+                      <td><%=data.Specialization%></td>
+                      <td><%=data.Clinic%></td>
+                      <td><%=data.Momares_number%></td>
+                    </tr>
+                    <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="8" style="text-align:center ;">No Data Found</td>
+            </tr>
+        <% } %>
+                   
+                  </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+
+    
+   
+
+</body>
+</html>

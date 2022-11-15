@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <%- include('../sup/headr.ejs')%>
+<body>
+    <div class="page  d-felx">
+    
+        <%- include('../sup/x_ray_dashbord.ejs')%>
+
+        
+        <div class="content">
+
+            <%- include('../sup/user_options.ejs') %> 
+
+
+            
+            <div style="width: 80%; margin:auto ;height:50vh;overflow: scroll;margin-top:10%">
+                <table style="width:100% ;">
+                  <tr>
+                    <th>Pation ID</th>
+                    <th>Pation Name</th>
+                    <th>Pation Status</th>
+                    <th>X-ray Type</th>
+                    <th>D/Nmae</th>
+                    <th>Clinic</th>
+                    <th>Upload</th>
+                  </tr>
+                  <% 
+                  if(data.length!=0){
+                    let i=1;
+
+                    data.forEach(function(dataa){
+
+                  %>
+                  <tr>
+                   
+                    <td><%=dataa.Pation_id%></td>
+                    <td><%=dataa.Pation_name%></td>
+                    
+                    <td><%=dataa.status%></td>
+                    <td><%=dataa.x_ray_type%></td>
+                    <td><%=dataa.dr_name%></td>
+                    <td><%=dataa.Clinic_Name%></td>
+                    <td><a  href="./x_ray_order_edit<%= dataa.id%>">Delete</a></td>
+                    
+
+                    
+                  </tr>
+                  <%i++; })%>
+                
+                  <% }else{ %> 
+
+                    
+
+                    <%}%>
+                </table>
+              </div>
+           
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

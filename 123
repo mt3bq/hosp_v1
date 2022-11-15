@@ -1,0 +1,11 @@
+<%
+                    if(user.length!=0){
+                    var i=1;
+                    user.forEach(function(data){
+                    %>
+                    <input type="radio"  name="Dr_name" value="<%=` ${data.first_name} ${data.se_name}` %>">
+                    <label for="html"><%= data.first_name+data.se_name %></label><br>
+                    <%  i++; }) %>
+        <% } else{ %>
+             <p></p>
+        <% } %>

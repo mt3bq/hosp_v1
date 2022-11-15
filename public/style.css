@@ -1,0 +1,688 @@
+*{
+   
+    box-sizing: border-box;
+    
+ 
+}
+body{
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    background-color:rgb(225 226 226);
+}
+a{
+    text-decoration: none;
+}
+*:focus{
+    outline: none;
+    
+}
+
+.page{
+    min-height: 100vh;
+}
+.page .sidebar{
+    box-shadow: 0px 10px 20px 2px rgb(0 0 0);
+    
+    
+}
+.page .sidebar h3{
+    font-size: larger;
+}
+.page .sidebar ul{
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 110%;
+   
+}
+.page .sidebar ul li{
+    padding-bottom: 8px;
+}
+
+.page .sidebar ul li a{
+    display: flex;
+    padding: 10px 20px;
+    color: black;
+    align-items: center;
+    column-gap: 13px;
+   
+    border-radius: 8px;
+}
+.page .sidebar ul li a:hover{
+    background-color: rgba(230, 230, 230, 0.747);
+}
+.page .sidebar ul li .active{
+    background-color: black;
+    color: white;
+}
+.page .sidebar ul li a span{
+    font-size: 13px;
+    
+}
+.page .sidebar ul li a i{
+    
+    
+}
+
+.content{
+    width: 100%;
+    position: relative;
+   
+    
+    
+}
+
+.content .box_1{
+    width: 50%;
+    height: 50%;
+    border-radius: 9px;
+   background-color: white;
+   position: absolute;
+   top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+   
+    
+    display: none;
+}
+.content .reg_box_2{
+    width: 86%;
+    height: auto;
+    border-radius: 9px;
+   background-color: white;
+   position: absolute;
+   top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+   
+    
+    display: none;
+}
+
+
+.content .reg_box_2 .titel_head{
+    text-align: center;
+    
+    
+}
+.content .reg_box_2 form{
+    width: 100%;
+}
+.content .reg_box_2  input{
+
+    width: 100%;
+}
+
+
+.content .reg_box_2 .info_det{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 40%;
+    row-gap: 4px;
+    padding-top: 5px;
+}
+.content .reg_box_2 .info_det .feild{
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+}
+.content .reg_box_2 .info_det .feild input{
+    width: 350px;
+    height: 42px;
+    margin-bottom: 20px;
+}
+
+.content .reg_box_2 .specal{
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+   
+    justify-content: space-around;
+   
+    row-gap: 4px;
+    padding-top: 8px;
+   
+}
+.content .reg_box_2 .specal .feild_2{
+    display: flex;
+    flex-direction: column;
+}
+.content .reg_box_2 .specal .feild_2 input{
+    width: 350px;
+    height: 42px;
+    margin-bottom: 20px;
+}
+
+.content .reg_box_2 .connect_info {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+   
+    justify-content: space-around;
+   
+    row-gap: 4px;
+    padding-top: 5%;
+   
+}
+.content .reg_box_2 .connect_info .feild_2{
+    display: flex;
+    flex-direction: column;
+}
+.content .reg_box_2 .connect_info .feild_2 input{
+    width: 350px;
+    height: 42px;
+    margin-bottom: 10px;
+}
+.content .reg_box_2 .up_style{
+    display: flex;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.content .reg_box_2 .up_style .feild_3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content .reg_box_2 .up_style .feild_3 label {
+    padding-bottom: 5px;
+}
+.content .reg_box_2 .up_style .feild_3 input{
+    border: 4px dotted rgb(36, 11, 150);
+    padding: 9px;
+    /* width: 98%; */
+    font-size: 19px;
+    
+    
+}
+.content .reg_box_2 .btn_sty{
+    width: 100%;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.content .reg_box_2 .btn_sty button{
+    width: 30%;
+    background-color:#796eff;
+    border: none;
+    border-radius: 8px;
+    height: 42px;
+    cursor: pointer;
+}
+.content .reg_box_2 .cansel_btn{
+    width: 100%;
+    position: absolute;
+    top: 11px;
+    left: 25px;
+   
+    
+}
+.content .reg_box_2 .cansel_btn i{ 
+   font-size: 40px;
+   cursor: pointer;
+   color: red;
+   
+}
+
+
+.content  .show{
+   display: block;
+    
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+   padding-top: 40px;
+}
+.head .search_ar{
+    background-color: white;
+    height: 50px;
+    border-radius: 8px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 6px;
+}
+.head .search_ar input{
+    border: none;
+    width: 100%;
+}
+.head .search_ar button{
+    background-color: white;
+    border: none;
+    background-color: darkgray;
+    border-radius: 8px;
+    height: 100%;
+    cursor: pointer;
+    
+}
+.head .ball{
+    font-size: 28px;
+    color: white;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+.head .ball select{
+    border: none;
+    background-color: rgb(225 226 226);
+}
+.box_filter{
+    display: flex;
+    padding-top: 8%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.box_filter .search_ar{
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 25%;
+    height: 66px;
+  
+}
+.box_filter .search_ar input{
+    border:none;
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    
+}
+.box_filter  .box_2{
+    width: 27%;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    padding-left: 10px;
+    height: 66px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.box_filter  .box_2 select{
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    height: 43px;
+    padding-left: 10px;
+    width: 100%;
+    height: 100%;
+}
+.box_filter label{
+    padding-left: 10px;
+}
+.box_filter  .box_3{
+    width: 27%;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    padding-left: 10px;
+    height: 66px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.box_filter  .box_3 select{
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 10px;
+}
+.content .btn_style{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 7%;
+    align-items: center;
+}
+.content .btn_style .session_1{
+    display: flex;
+    width: 35%;
+    align-items: center;
+    justify-content: space-around;
+}
+.content .btn_style button{
+    width: 35%;
+    height: 40px;
+    background-color:#796eff;;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.content .table_style{
+    
+    width: 90%;
+    margin: auto;
+   
+    overflow: scroll;
+    max-height: 500px;
+    padding-top: 20px;
+}
+.content .table_style table{
+   
+    width: 100%;
+   
+}
+
+.content .table_style table tr{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 7px;
+  padding-top: 10px;
+
+}
+.content .box_1{
+    margin-top: 5px;
+    width: 60%;
+    height: 80%;
+}
+.box_1 .titel_1{
+    text-align: center;
+}
+.box_1 .session_box{
+    display: flex;
+    column-gap: 4px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    position: relative;
+    background-color: white;
+}
+.box_1 .session_box .time_box{
+
+    width: 60%;
+    height: 85%;
+    border: 5px dotted blue;
+    /* padding: 24px; */
+    margin: 20px;
+    
+}
+.box_1 .session_box .time_box .data_form{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+    width: 100%;
+}
+.box_1 .session_box .time_box .data_form input{
+    height: 40px;
+}
+.box_1 .session_box .time_box .time{
+    display: flex;
+    justify-content: space-around;
+    
+    padding-top: 10px;
+}
+.box_1 .session_box .time_box .time input{
+    width: 30%;
+    height: 30px;
+}
+
+
+
+
+.box_1 .session_box .select_doc{
+    width: 40%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+   
+    
+}
+
+
+.box_1 .select_doc .cheek_box{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    /* justify-content: center; */
+    column-gap: 5px;
+    padding-left: 25px;
+    padding-top: 25px;
+
+}
+.box_1 .select_doc .cheek_box input{
+   width: 30px;
+   height: 30px;
+   border: 2px dotted blue;
+}
+.box_1 .session_box  .btn_style_01{
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.box_1 .session_box  .btn_style_01 button{
+    border: 1px solid blue;
+    background-color: white;
+    width: 38%;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: black;
+    
+}
+
+
+/*style clinic Page*/
+
+
+
+
+
+
+
+.content .box_add_clinic{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: white;
+     width: 86%;
+     height: auto;
+     border-radius: 9px;
+    
+    display: none;
+}
+.content .show_2{
+    display: block;
+}
+
+.content .box_add_clinic .btn_style_01{
+    position: absolute;
+    bottom: 7px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    column-gap: 15px;
+}
+.content .box_add_clinic .btn_style_01 button{
+    height: 40px;
+    width: 30%;
+    border-radius: 7px;
+    border: none;
+}
+.content .box_add_clinic form{
+  padding-top: 3%;
+}
+.content .box_add_clinic form input{
+height: 40px;
+}
+
+
+
+
+/*style Radiology Page start*/
+
+.content .All_patients_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 86%;
+    height: 80vh;
+    border-radius: 9px;
+   
+   display: none;
+}
+
+.content .show_3{
+    display: block;
+}
+.content .All_patients_box .titel{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 10px;
+}
+.content .All_patients_box .patients{
+    width: 98%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+/*style Rid-x Page start*/
+
+.content .order_box{
+height: 40vh;
+background-color: white;
+color: black;
+width: 80%;
+margin: auto;
+border-radius: 7px;
+overflow: scroll;
+}
+.content .order_box .titel{
+    text-align: center;
+    padding-top: 6px;
+    border-bottom: 1px solid black;
+}
+.content .order_box .order_det{
+    width: 100%;
+    background-color: #796eff;
+}
+.content .order_box .order_det table{
+    width: 100%;
+}
+.content  .cansel_btn{
+    width: 100%;
+    position: absolute;
+    top: 11px;
+    left: 25px;
+   
+    
+}
+.content  .cansel_btn i{ 
+   font-size: 40px;
+   cursor: pointer;
+   color: red;
+   
+}
+
+
+.content .up_box{
+    width: 80%;
+    margin: auto;
+    margin-top: 20%;
+    background-color: white;
+    height: 20vh;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+    border-radius: 7px;
+}
+
+
+
+
+/*style Rid-x Page End*/
+
+
+/*login style*/
+
+.login_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.login_box form{
+    
+}
+.login_box form input{
+  width: 400px;
+}
+.login_box button{
+   background-color: darkturquoise;
+   margin-top: 7px;
+   text-align: center;
+}
+
+
+
+
+@media (max-width:767px) {
+    .page .sidebar ul li a span{
+        display: none;
+    }
+    .content .show {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    
+}
+
+@media (min-width:1300px) {
+        
+    .page .sidebar{
+        
+    }
+    .page .sidebar ul{}
+    .page .sidebar ul li{
+        margin-bottom: 15px;
+        font-size: 25px;
+    }
+    .page .sidebar ul li a{
+        font-size: 20px;
+    }
+    .page .sidebar ul li a i{}
+
+}
