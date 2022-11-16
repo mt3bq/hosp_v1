@@ -20,7 +20,7 @@ app.set('view engine','ejs');
 app.use(express.static('public'))
 
 let client= new oc({
-  url:"http://localhost:8042",
+  url:"http://127.0.0.1:8042",
   
   
 
