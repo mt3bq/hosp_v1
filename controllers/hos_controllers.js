@@ -10,7 +10,7 @@ const app=express();
 app.use(upload());
 
 let client= new oc({
-    url:"http://localhost:8042",
+    url:"http://127.0.0.1:8042",
     
     
 
