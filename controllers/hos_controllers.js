@@ -126,8 +126,7 @@ const Radiology_get=(req,res)=>{
             res.render('Radiology', {msg :"",data,name,ress});
         })
         .catch(function(err) {
-            console.log(err+
-              '12345678x-');
+            res.render('Radiology', {msg :"",data,name});
         });
           
     
