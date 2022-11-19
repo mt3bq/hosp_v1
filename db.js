@@ -4,11 +4,11 @@ const connect=mysql.createConnection(
     {
 
         
-        host:"sql12.freesqldatabase.com",
+        host:"localhost",
         port:3306,
-        user:"sql12573873",
-        password:"cwbgHIfVQt",
-        database:"sql12573873"
+        user:"root",
+        password:"123456789",
+        database:"hospital"
     }
 
 

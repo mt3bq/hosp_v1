@@ -127,10 +127,12 @@ form_1.addEventListener('submit',async(e)=>{
     let momares_number=form_1.momares_number.value;
     let phone_number=form_1.phone_number.value;
     let up_sgnil=form_1.up_sgnil.value;
+    let emaill=form_1.emaill.value;
+    let employee_type=form_1.employee_type.value;
     try {
         const res=await fetch('/HealthPractitioner',{
             method:'POST',
-            body:JSON.stringify({first_name,se_name,list_name,Arabic_first_name,Arabic_se_name,Arabic_list_name,Specialization,Clinic,Role,momares_number,phone_number,up_sgnil}),
+            body:JSON.stringify({first_name,se_name,list_name,Arabic_first_name,Arabic_se_name,Arabic_list_name,Specialization,Clinic,Role,momares_number,phone_number,up_sgnil,emaill,employee_type}),
             headers:{'Content-Type':'application/json'}
         });
         const data= await res.json();

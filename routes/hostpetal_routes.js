@@ -18,6 +18,12 @@ routes.get('/login',hos_controller.login_get);
 routes.post('/login',hos_controller.login_post);
 
 
+
+routes.get('/cp',hos_controller.cp_get);
+
+routes.post('/cp',hos_controller.cp_post);
+
+
 //end session-mysql
 //index
 
@@ -59,12 +65,12 @@ routes.get('/clinics',hos_controller.cheek,hos_controller.clinics_get);
 
       //page of x_ray_employ
 
-      routes.get('/index_x_ray',hos_controller.x_ray_index);
+      routes.get('/index_x_ray',hos_controller.cheek,hos_controller.x_ray_index);
       
 
-      routes.get('/x_ray_order',hos_controller.x_ray_order_get);
+      routes.get('/x_ray_order',hos_controller.cheek,hos_controller.x_ray_order_get);
 
-      routes.get('/x_ray_order',hos_controller.x_ray_order_post);
+      routes.get('/x_ray_order',hos_controller.cheek,hos_controller.x_ray_order_post);
 
 
       //routes.get('/x_ray_order_edit:id',hos_controller.x_ray_order_edit_get);

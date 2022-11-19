@@ -19,8 +19,10 @@ const port=process.env.PORT ||3000;
 app.set('view engine','ejs');
 app.use(express.static('public'))
 
+
+
 let client= new oc({
-  url:"http://127.0.0.1:8042",
+  url:"http://localhost:8042",
   
   
 
@@ -93,7 +95,9 @@ app.post('/x_ray_order_edit:id',(req,res)=>{
 })
   
 
-
+app.get("*",(req,res)=>{
+  res.status(404).render("404");
+})
 
 app.listen(port,()=>{
     console.log("Server is Working...");

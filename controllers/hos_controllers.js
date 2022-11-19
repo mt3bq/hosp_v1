@@ -10,7 +10,7 @@ const app=express();
 app.use(upload());
 
 let client= new oc({
-    url:"http://127.0.0.1:8042",
+    url:"http://localhost:8042",
     
     
 
@@ -60,6 +60,8 @@ const HealthPractitioner_post=(req,res)=>{
     let momares_number=req.body.momares_number;
     let phone_number=req.body.phone_number;
     let up_sgnil=req.body.up_sgnil;
+    let emaill=req.body.emaill;
+    let employee_type=req.body.employee_type;
     var sql='SELECT * FROM healthparactitioner;';
     connect.query(sql, function (err, data, fields) {
     if (err) throw err;
@@ -69,8 +71,9 @@ const HealthPractitioner_post=(req,res)=>{
        
        
         if(!er){
+            console.log(emaill)
            
-            let inset_query='insert into healthparactitioner (first_name,se_name,list_name,ar_first_name,ar_se_name,ar_list_name,Specialization,Clinic,Role,Momares_number,phone_number,sig)values("'+first_name+'","'+se_name+'","'+list_name+'","'+ar_first_name+'","'+ar_se+'","'+ar_list_name+'","'+Specialization+'","'+Clinic+'","'+Role+'","'+momares_number+'","'+phone_number+'","'+up_sgnil+'")';
+            let inset_query='insert into healthparactitioner (first_name,se_name,list_name,ar_first_name,ar_se_name,ar_list_name,Specialization,Clinic,Role,Momares_number,phone_number,sig,email,user,password,employee_type)values("'+first_name+'","'+se_name+'","'+list_name+'","'+ar_first_name+'","'+ar_se+'","'+ar_list_name+'","'+Specialization+'","'+Clinic+'","'+Role+'","'+momares_number+'","'+phone_number+'","'+up_sgnil+'","'+emaill+'","'+first_name+'","123456789","'+employee_type+'")';
             if(resl.length===0){
                 connect.query(inset_query,(e)=>{
                     if(!e){
@@ -120,13 +123,14 @@ const Radiology_get=(req,res)=>{
         .then(function(ress) {
             console.log(ress);
             for(let i=0;i<ress.length;i++){
-                console.log(ress[i]);
+               
             }
             
             res.render('Radiology', {msg :"",data,name,ress});
         })
         .catch(function(err) {
-            res.render('Radiology', {msg :"",data,name});
+            console.log(err+
+              '12345678x-');
         });
           
     
@@ -163,6 +167,48 @@ const Radiology_post=(req,res)=>{
 
 }
 
+//employee login
+
+const login_get=(req,res)=>{
+
+    res.render('login');
+
+}
+
+
+
+const login_post=(req,res)=>{
+
+    let name=req.body.name;
+    let password=req.body.password;
+    let sql='select user,password,employee_type from healthparactitioner where user= "'+name+'" and password="'+password+'"';
+
+
+  connect.query(sql,(e,d)=>{
+      if(d.length!=0){
+         //res.render('index');
+         req.session.cheek=true;
+        req.session.user_info=name;
+         
+
+       
+        if(d[0].employee_type=='X-ray'){
+            res.render("x_ray/index_x_ray",{data:d,name})
+        }else{res.render("login",{data:d,name})}
+         
+
+         
+         
+      }else{
+          res.render('cp');
+          
+      }
+  })
+
+}
+
+
+
 const up_dicom_get=(req,res)=>{
     let id=req.params.id;
     let sql= 'select * from x_ray_order where id="'+id+'"';
@@ -185,14 +231,14 @@ const up_dicom_post=(req,res)=>{}
 
 
 
-const login_get=(req,res)=>{
+const cp_get=(req,res)=>{
   
 
    // connect.query(sql)
-   res.render('login');
+   res.render('cp');
 }
 
-const login_post=(req,res)=>{
+const cp_post=(req,res)=>{
     let name=req.body.name;
     let password=req.body.password;
     let sql='select * from admin where name= "'+name+'" and password="'+password+'"';
@@ -209,7 +255,7 @@ const login_post=(req,res)=>{
          res.render("index",{data:d,name})
          
       }else{
-          res.render('login');
+          res.render('cp');
           
       }
   })
@@ -275,12 +321,15 @@ module.exports={
     Radiology_post,
     login_get,
     login_post ,
+    cp_get,
+    cp_post,
     cheek,
     index,
     x_ray_index,
     x_ray_order_get,
     x_ray_order_post,
     up_dicom_get,
+    
    // x_ray_order_edit_get,
     //x_ray_order_edit_post
 }
