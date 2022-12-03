@@ -22,7 +22,11 @@ app.use(express.static('public'))
 
 
 let client= new oc({
-  url:"http://localhost:8042",
+  url:"http://ec2-3-83-82-162.compute-1.amazonaws.com:8042",
+   auth: {
+      username: 'muteb',
+      password: 'muteb'
+    }
   
   
 
